@@ -28,20 +28,43 @@ def update_grade(name, grade):
     else:
         print(f"Student {name} was not found in gradebook")
 
+#Func to find a students grade
+def find_grade(name):
+    if name in student_grades:
+        grade = student_grades.get(name)
+        print(f"Student {name} grade has been found. Students grade is {grade}")
+    else:
+        print(f"Student {name} not found in gradebook")
+
+#Func to calculate and print the average grade of all the students in the dict
+def average_grade():
+    grades = student_grades.values()
+    total_sum = sum(grades)
+    count = len(grades)
+    average = total_sum / count
+    print(f"The average grade of the students is {average}")
 # Add some students
-add_student("Mollie", "A++")
-add_student("Aja", "A++")
-add_student("Sydney", "A++")
-add_student("Cayla", "A++")
+add_student("Mollie", 95)
+add_student("Aja", 98)
+add_student("Sydney", 100)
+add_student("Cayla", 100)
 
 # Display students and their grades
 display_students()
 
 # Update a student's grade
-update_grade("Mollie", "A++++")
+update_grade("Mollie", 100
+)
 
 # Remove a student
 remove_student("Cayla")
 
 # Display students and their grades again
 display_students()
+
+#find student's grade and print message
+find_grade("Mollie")
+find_grade("Cayla")
+
+#get the class average
+average_grade()
